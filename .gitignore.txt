@@ -1,3 +1,11 @@
+.meta data/
+bin/
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+
 # Compiled class file
 *.class
 
