@@ -1,0 +1,95 @@
+package com.threads.reflextion;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.Scanner;
+
+import com.chainsys.arrayslist.Emp;
+import com.threads.Actor;
+
+public class Methods {
+	public static void main(String args[])
+	{
+		testA();
+		testB();
+	}
+	public static void testA() {
+        String s1="Hello";
+        //Class<?> stringclass=s1.getClass();
+        printClassInfo(s1);
+        Integer x=2000;
+        //Class<?> intClass=x.getClass();
+        printClassInfo(x);
+		Emp firstEmp = new Emp(x, s1);
+        //Class<?> empClass=firstEmp.getClass();
+        printClassInfo(firstEmp);
+        Actor hero=new Actor();
+        printClassInfo(hero);}
+        
+        
+private static void printClassInfo(Integer x) {
+		// TODO Auto-generated method stub
+		
+	}
+public static void testB()        {
+     
+    String classname="com.chainsys.reflection.Actor";
+     Class<?> actorclass = null;
+     try {
+        actorclass=Class.forName(classname); // Actor actorclass=null;
+     } catch (ClassNotFoundException e1) 
+     {
+        e1.printStackTrace();
+     } 
+     Object obj = null;
+     try {
+        //obj=actorclass.newInstance(); // new Actor();
+            obj = actorclass.getDeclaredConstructors()[0].newInstance();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        }catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+     
+     printClassInfo(obj);
+
+    
+}
+private static void printClassInfo(Object obj) {
+	// TODO Auto-generated method stub
+	
+}
+public static void earlyBinding()
+{
+	Actor actorReference=new Actor();
+	actorReference.Name="SK";
+	actorReference.City="Chennai";
+	actorReference.printCity();
+	actorReference.printName();
+}
+public static void lateBinding() {
+	java.util.Scanner sc = new Scanner(System.in);
+	try {			
+		System.out.println("Enter Class Name");
+		String className = sc.nextLine();
+		// load the class -- A a1;
+		Class<?> classReference = Class.forName(className);
+		// create Object a1=new A();
+		Object obj = classReference.getDeclaredConstructor().newInstance();			
+		System.out.println("Class Name " + obj.getClass().getName());
+		System.out.println("Hash Code " + obj.hashCode());
+	}  catch (Exception e) {
+		System.out.println("Exception: " + e);
+	}
+	finally
+	{
+		sc.close();
+	}
+}
+
+}
