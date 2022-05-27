@@ -16,7 +16,7 @@ public class ListArrayListDemo {
 		try {
 			for (int i = 0; i < 5; i++) {
 				Emp e1 = new Emp(i, null);
-				e1.Name = "Emp" + i;
+				e1.setName("Emp" + i);
 				ArrayList<Emp> empArayList;
 				empArrayList.add(e1);
 			}
@@ -26,14 +26,14 @@ public class ListArrayListDemo {
 			System.out.println("Size of empArrayList after additions: " + empArrayList.size());
 
 			Emp e4 = new Emp(4, null);
-			e4.Name = "Elon Musk";
+			e4.setName("Elon Musk");
 			empArrayList.add(new Emp(4, null));
 			System.out.println("Freq of [Emp id-4] in ArrayList-" + Collections.frequency(empArrayList, e3));
 			Iterator<Emp> empIterator = empArrayList.iterator();
 			while (empIterator.hasNext()) {
 				Emp element = empIterator.next();
 				Emp e1 = (Emp) element;
-				System.out.println("\t" + e1.getId() + " " + e1.Name);
+				System.out.println("\t" + e1.getId() + " " + e1.getName());
 			}
 
 		} catch (Exception err) {

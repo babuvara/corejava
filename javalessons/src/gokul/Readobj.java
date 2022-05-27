@@ -22,7 +22,7 @@ public class Readobj {
 			}
 		}
 		if (null != ob) {
-			System.out.println((ob.getId() +" "+ ob.Name));
+			System.out.println((ob.getId() +" "+ ob.getName()));
 			System.out.println("HashCode " + ob.hashCode());
 		}
 	}

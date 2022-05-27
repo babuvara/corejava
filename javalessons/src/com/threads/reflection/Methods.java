@@ -15,14 +15,14 @@ public class Methods {
 	public static void main(String args[]) {
 		// testA();
 		// testB();
-//		 lateBinding();
+	 //lateBinding();
 		// queryTypeInfo();
-		testsetAccessible();
+		//testsetAccessible();
 	}
 
 	public static void testA() {
 		String s1 = "Hello";
-		// Class<?> stringclass=s1.getClass();
+		Class<?> stringclass=s1.getClass();
 		printClassInfo(s1);
 		Integer x = 2000;
 		// Class<?> intClass=x.getClass();
@@ -76,7 +76,7 @@ public class Methods {
 	public static void earlyBinding() {
 		Actor actorReference = new Actor();
 		actorReference.Name = "SK";
-		actorReference.City = "Chennai";
+		actorReference.city = "Chennai";
 		actorReference.printCity();
 		actorReference.printName();
 	}
@@ -153,7 +153,7 @@ public class Methods {
 			Object objReference = classReference.getDeclaredConstructor().newInstance();
 // city is default access modifier
 			Field fieldCity = objReference.getClass().getDeclaredField("city");
-			fieldCity.setAccessible(true);
+			//fieldCity.setAccessible(true);
 			fieldCity.set(objReference, "Chennai");
 			Object cityFieldInstance = fieldCity.get(objReference);
 			System.out.println(cityFieldInstance);

@@ -2,8 +2,8 @@ package com.threads;
 
 public class Actor {
 	public String Name;
-	String city;
-	protected long pincode;
+	public String city;
+	public long pincode;
 
 	public Actor() {
 		Name = "default";
@@ -22,7 +22,7 @@ public class Actor {
 		return x + y + z;
 	}
 
-	protected void printCity() {
+	public void printCity() {
 		System.out.println(" printCity " + city);
 	}
 }

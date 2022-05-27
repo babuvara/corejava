@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 public class Emp implements Serializable {
 	private final int Id;
-	public String Name;
+	private String Name;
 
 	public Emp(int v1, String sName) {
 		Id = v1;
-		Name=sName;
+		setName(sName);
 	}
 
 	public int getId() {
@@ -27,13 +27,20 @@ public class Emp implements Serializable {
 		return flag;
 	}
 
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
 	/* @Override
 	public int hashCode() {
 		return this.Id;
 	}
 
 	public void print() {
-		// TODO Auto-generated method stub
 
 	}  */
 }
