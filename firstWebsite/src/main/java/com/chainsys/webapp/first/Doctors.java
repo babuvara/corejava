@@ -47,8 +47,8 @@ public class Doctors extends HttpServlet {
 		Iterator<Doctor> drIterator = allDoctor.iterator();
 		while (drIterator.hasNext()) {
 			Doctor dr = drIterator.next();
-			out.println("<br>" + dr.getDOC_ID() + "<br> " + dr.getDOC_NAME() + "<br> " + dr.getDOB() + "<br> "
-					+ dr.getSPECIALITY() + " " + dr.getCITY() + "<br> " + dr.getPHONE_NO() + "<br> " + dr.getFEES());
+			out.println("<br>" + dr.getDOCTOR_ID() + "<br> " + dr.getDOCTOR_NAME() + "<br> " + dr.getDOB() + "<br> "
+					+ dr.getSPECIALITY() + " " + dr.getCITY() + "<br> " + dr.getPHONE_NO() + "<br> " + dr.getSTANDARD_FEES());
 		}
 	}
 

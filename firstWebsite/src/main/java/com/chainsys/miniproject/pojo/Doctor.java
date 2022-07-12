@@ -3,28 +3,28 @@ package com.chainsys.miniproject.pojo;
 import java.util.Date;
 
 public class Doctor {
-	private int DOC_ID;
-	private String DOC_NAME;
+	private int DOCTOR_ID;
+	private String DOCTOR_NAME;
 	private Date DOB;
 	private String SPECIALITY;
 	private String CITY;
 	private long PHONE_NO;
-	private float FEES;
+	private float STANDARD_FEES;
 
-	public int getDOC_ID() {
-		return DOC_ID;
+	public int getDOCTOR_ID() {
+		return DOCTOR_ID;
 	}
 
 	public void setDOC_ID(int dOC_ID) {
-		this.DOC_ID = dOC_ID;
+		this.DOCTOR_ID = dOC_ID;
 	}
 
-	public String getDOC_NAME() {
-		return DOC_NAME;
+	public String getDOCTOR_NAME() {
+		return DOCTOR_NAME;
 	}
 
 	public void setDOC_NAME(String dOC_NAME) {
-		this.DOC_NAME = dOC_NAME;
+		this.DOCTOR_NAME = dOC_NAME;
 	}
 
 	public Date getDOB() {
@@ -59,12 +59,12 @@ public class Doctor {
 		this.PHONE_NO = phone;
 	}
 
-	public float getFEES() {
-		return FEES;
+	public float getSTANDARD_FEES() {
+		return STANDARD_FEES;
 	}
 
 	public void setFEES(float fEES) {
-		this.FEES = fEES;
+		this.STANDARD_FEES = fEES;
 	}
 
 }

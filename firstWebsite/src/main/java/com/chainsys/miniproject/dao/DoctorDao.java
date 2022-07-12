@@ -247,7 +247,7 @@ public class DoctorDao {
 	public static List<Doctor> getAllDoctor() {
 		List<Doctor> listOfDoctor = new ArrayList<Doctor>();
 		Doctor doc = null;
-		String selectquery = "select  DOC_ID,DOC_NAME,DOB,SPECIALITY,CITY,PHONE_NO,FEEs from doctor";
+		String selectquery = "select  DOCTER_ID,DOCTOR_NAME,DOB,SPECIALITY,CITY,PHONE_NO,STANDARD_FEES from doctor";
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
