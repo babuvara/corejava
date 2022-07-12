@@ -2,7 +2,7 @@ package com.chainsys.miniproject.ui;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -88,7 +88,8 @@ public class DoctorUI {
 			} catch (InvalidInputDataException err) {
 				err.printStackTrace();
 			}
-			newdoc.setPHONE_NO(phone);
+			long phone1=Long.parseLong(phone);
+			newdoc.setPHONE_NO(phone1);
 			System.out.println("Enter Doctor Standard fees : ");
 			float fees = sc.nextFloat();
 			try {
@@ -190,7 +191,8 @@ public class DoctorUI {
 				err.printStackTrace();
 				return;
 			}
-			newdoc.setPHONE_NO(phone);
+			long phone1=Long.parseLong(phone);
+			newdoc.setPHONE_NO(phone1);
 			System.out.println("Enter Update Standard_Fees :");
 			float fees = sc.nextFloat();
 			try {
