@@ -1,5 +1,5 @@
 package com.chainsys.entrypoint;
-import edu.lessons.day61.collections.SetTreeSetDemo;
+import com.lessons.collections.SetTreeSetDemo;
 /***
  * 
  * @author babu3107
