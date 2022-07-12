@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Datatypes</title>
+<!-- <script defer src="../script/strings.js"></script> -->
+<!-- <script defer src="../script/numbers.js"></script> -->
+<!-- <script defer src="../script/boolean.js"></script> -->
+<script src="../Scripts/objects.js"></script>
+</head>
+<body>
+	<div id="div1">welcome</div>
+	<div name="div2"></div>
+	<script>
+		console.log("date= "+d);
+		f1();
+		var len;
+		if (book) {
+			if (book['sub-title']) {
+				len = book['sub-title'].length;
+				console.log(len);
+			} else
+				console.log("book.subtitle undefined: property doesn't exist");
+		} else
+			console.log("book is null");
+		console.log(book.author);
+		delete book.author; // The book object now has no author property.
+		console.log(book.author);
+		console.log(book["main title"]);
+		delete book["main title"]; // Now it doesn't have "main title", either.
+		console.log(book["main title"]); // undefined
+
+		let o6 = {
+			x : 1
+		}; // o has own property x and inherits property toString
+		console.log(o6.x);
+		console.log(o6.toString);
+		var deleteResult = delete o6.x; // Delete x, and return true
+		console.log(deleteResult);
+		console.log(o6.x); //undefined
+		console.log(o6.toString);
+		deleteResult = delete o6.x;
+		console.log(deleteResult); //this delete operation does nothing but return true
+		delete o6.toString; // Do nothing (toString isn't an own property), return true
+		//own properties alone can be deleted
+		delete 1; // Nonsense, but evaluates to true
+		 delete Object.prototype; // Can't delete; property is non-configurable
+	</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+@charset "ISO-8859-1";
+
+/*class selectors */
+.center {
+	text-align: center;
+}
+
+.largefont {
+	font-size: large;
+	background-color: green;
+	color: white;
+}
+
+.mediumfont {
+	font-size: medium;
+}
+
+.smallfont {
+	font-size: small;
+}
+
+.reddiv {
+	color:red;
+}
+
+/* type selector */
+div > p {
+	color: brown;
+	font-size:small;
+}
+
+/* id selector */
+#div1 {
+	color: green;
+	font-size: larger;
+	text-align: left;
+}
+
+/* pseudo selector */
+div:first-child {
+	color: pink;
+	font-size:small;
+}
+
+div:last-child {
+	color: pink;
+	font-size:large;
+}
+
+div:nth-child(even) {
+	color: red;
+	font-size:large;
+}
+
+div:nth-child(odd) {
+	color: grey;
+	font-size:large;
+}
+
+div:nth-child(5n+1) {
+	color: blue;
+	font-size:large;
+}
+
+/* type selector and pseudo selector  */
+a {
+	color: lime;
+	text-declaration: none;
+}
+
+a:hover {
+	color: red;
+	text-declaration: underline;
+}
+/* #chennai {
+	color: black;
+	
+}
+#madurai {
+	color: yellow;
+	
+}
+#salem {
+	color: navyblue;
+	
+}  */
+/* attribute selector */
+/* a[href*="https://www.chennai.nic.in"] {
+	color:blue;
+}
+a[href*="https://www.madurai.nic.in"] {
+	color:gray;
+}
+a[href*="https://www.salem.nic.in"] {
+	color:purple;
+} */
+input[id="fname"]
+{
+	color: red;
+	background-color: silver;
+}
+a[href*="chennai.nic"] {
+	color:blue;
+}
+a[href*="madurai.nic"] {
+	color:gray;
+}
+a[href*="salem.nic"] {
+	color:purple;
+}

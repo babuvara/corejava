@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Input Elements</title>
+</head>
+<body>
+	<div>
+		<div>
+			<label for='year'> Years Of experience: <input name='year'
+				id='year' type='number' step=0.05 maxlength=3 min=5 value=35
+				required>
+			</label>
+		</div>
+		<div>
+			<label for='age'> Age Range : <input name='age' id='age'
+				type='range' step=1 min=22 max=30 value=23 required>
+			</label>
+		</div>
+		<div>
+			<label for='phone'> Phone Number : <input name='phone'
+				id='phone' type='tel' required pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+				placeholder='123-456-6789'>
+			</label>
+		</div>
+		<div>
+			<input name='course' id='course' type="checkbox" checked=true
+				required value='computer science'> <input name='course'
+				id='course' type="checkbox" required value='english'> <input
+				name='course' id='course' type="checkbox" required
+				value='mathematics'>
+		</div>
+		<div>
+			<label for='secret'> hidden content : <input type='hidden'
+				name='secret' value='passwordA'>
+			</label>
+		</div>
+		<div>
+			<label for='url'> Url : <input type='url' name='url'
+				value='www.google.com'>
+			</label>
+		</div>
+		<div>
+			<label for='listOfFruits'> <select name='listOfFruits'
+				title='Select a fruit'>
+					<option selected>select fruit</option>
+					<option>apple</option>
+					<option>orange</option>
+					<option>mango</option>
+					<optgroup label="bananas">
+						<option>red banana</option>
+						<option>green banana</option>
+						<option>yellow banana</option>
+					</optgroup>
+			</select>
+			</label>
+		</div>
+	</div>
+</body>
+</html>
