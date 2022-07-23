@@ -5,8 +5,8 @@ public final class FinalClassDemo {
 		System.out.println("Echo.....");
 	}
 }
-/* class childA extends FinalClassDemo
-{
-
-}
-*/
+/*
+ * class childA extends FinalClassDemo {
+ * 
+ * }
+ */

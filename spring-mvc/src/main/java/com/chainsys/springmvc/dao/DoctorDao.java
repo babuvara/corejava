@@ -1,4 +1,4 @@
-package com.chainsys.miniproject.dao;
+package com.chainsys.springmvc.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.chainsys.miniproject.pojo.Doctor;
+import com.chainsys.springmvc.pojo.Doctor;
 
 import java.sql.PreparedStatement;
 
@@ -46,14 +46,14 @@ public class DoctorDao {
 		try {
 			con = getConnection();
 			ps = con.prepareStatement(insertquery);
-			ps.setInt(1, newdoc.getDOCTOR_ID());
-			ps.setString(2, newdoc.getDOCTOR_NAME());
+			ps.setInt(1, newdoc.getDoctor_id());
+			ps.setString(2, newdoc.getDoctor_name());
 			// convert java.util.Date to java.sql.date
-			ps.setDate(3, convertTosqlDate(newdoc.getDOB()));
-			ps.setString(4, newdoc.getSPECIALITY());
-			ps.setString(5, newdoc.getCITY());
-			ps.setLong(6, newdoc.getPHONE_NO());
-			ps.setFloat(7, newdoc.getSTANDARD_FEES());
+			ps.setDate(3, convertTosqlDate(newdoc.getDob()));
+			ps.setString(4, newdoc.getSpeciality());
+			ps.setString(5, newdoc.getCity());
+			ps.setLong(6, newdoc.getPhone_no());
+			ps.setFloat(7, newdoc.getStandard_fees());
 
 			rows = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -81,14 +81,14 @@ public class DoctorDao {
 		try {
 			con = getConnection();
 			ps = con.prepareStatement(updatequery);
-			ps.setInt(7, newdoc.getDOCTOR_ID());
-			ps.setString(1, newdoc.getDOCTOR_NAME());
+			ps.setInt(7, newdoc.getDoctor_id());
+			ps.setString(1, newdoc.getDoctor_name());
 			// convert java.util.Date to java.sql.date
-			ps.setDate(2, convertTosqlDate(newdoc.getDOB()));
-			ps.setString(3, newdoc.getSPECIALITY());
-			ps.setString(4, newdoc.getCITY());
-			ps.setLong(5, newdoc.getPHONE_NO());
-			ps.setFloat(6, newdoc.getSTANDARD_FEES());
+			ps.setDate(2, convertTosqlDate(newdoc.getDob()));
+			ps.setString(3, newdoc.getSpeciality());
+			ps.setString(4, newdoc.getCity());
+			ps.setLong(5, newdoc.getPhone_no());
+			ps.setFloat(6, newdoc.getStandard_fees());
 			ps.executeUpdate();
 			rows = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -211,14 +211,14 @@ public class DoctorDao {
 			rs = ps.executeQuery();
 			doc = new Doctor();
 			if (rs.next()) {
-				doc.setDOC_ID(rs.getInt(1));
-				doc.setDOC_NAME(rs.getString(2));
+				doc.setDoctor_id(rs.getInt(1));
+				doc.setDoctor_name(rs.getString(2));
 				java.util.Date date = new java.util.Date(rs.getDate(3).getTime());
-				doc.setDOB(date);
-				doc.setSPECIALITY(rs.getString(4));
-				doc.setCITY(rs.getString(5));
-				doc.setPHONE_NO(rs.getLong(6));
-				doc.setFEES(rs.getFloat(7));
+				doc.setDob(date);
+				doc.setSpeciality(rs.getString(4));
+				doc.setCity(rs.getString(5));
+				doc.setPhone_no(rs.getLong(6));
+				doc.setStandard_fees(rs.getFloat(7));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -258,14 +258,14 @@ public class DoctorDao {
 			doc = new Doctor();
 			while (rs.next()) {
 				doc = new Doctor();
-				doc.setDOC_ID(rs.getInt(1));
-				doc.setDOC_NAME(rs.getString(2));
+				doc.setDoctor_id(rs.getInt(1));
+				doc.setDoctor_name(rs.getString(2));
 				java.util.Date date = new java.util.Date(rs.getDate(3).getTime());
-				doc.setDOB(date);
-				doc.setSPECIALITY(rs.getString(4));
-				doc.setCITY(rs.getString(5));
-				doc.setPHONE_NO(rs.getLong(6));
-				doc.setFEES(rs.getFloat(7));
+				doc.setDob(date);
+				doc.setSpeciality(rs.getString(4));
+				doc.setCity(rs.getString(5));
+				doc.setPhone_no(rs.getLong(6));
+				doc.setStandard_fees(rs.getFloat(7));
 				listOfDoctor.add(doc);
 			}
 		} catch (SQLException e) {

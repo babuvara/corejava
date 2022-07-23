@@ -19,7 +19,6 @@ import com.chainsys.miniproject.commonutil.InvalidInputDataException;
 import com.chainsys.miniproject.commonutil.Validator;
 import com.chainsys.miniproject.dao.DoctorDao;
 import com.chainsys.miniproject.pojo.Doctor;
-import com.chainsys.miniproject.pojo.Employee;
 
 /**
  * Servlet implementation class Doctors
@@ -41,14 +40,14 @@ public class Doctors extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
 		List<Doctor> allDoctor = DoctorDao.getAllDoctor();
 		Iterator<Doctor> drIterator = allDoctor.iterator();
 		while (drIterator.hasNext()) {
 			Doctor dr = drIterator.next();
 			out.println("<br>" + dr.getDOCTOR_ID() + "<br> " + dr.getDOCTOR_NAME() + "<br> " + dr.getDOB() + "<br> "
-					+ dr.getSPECIALITY() + " " + dr.getCITY() + "<br> " + dr.getPHONE_NO() + "<br> " + dr.getSTANDARD_FEES());
+					+ dr.getSPECIALITY() + " " + dr.getCITY() + "<br> " + dr.getPHONE_NO() + "<br> "
+					+ dr.getSTANDARD_FEES());
 		}
 	}
 
@@ -58,7 +57,6 @@ public class Doctors extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		if (request.getParameter("change").equals("Add_doc")) {
 			PrintWriter out = response.getWriter();
 			try {
@@ -126,7 +124,7 @@ public class Doctors extends HttpServlet {
 				} catch (InvalidInputDataException err) {
 					err.printStackTrace();
 				}
-				long phone1=Long.parseLong(phone);
+				long phone1 = Long.parseLong(phone);
 				newdoc.setPHONE_NO(phone1);
 				String fee = request.getParameter("fees");
 				float fees = Float.parseFloat(fee);
@@ -262,7 +260,7 @@ public class Doctors extends HttpServlet {
 				err.printStackTrace();
 				return;
 			}
-			long phone1=Long.parseLong(phone);
+			long phone1 = Long.parseLong(phone);
 			newdoc.setPHONE_NO(phone1);
 			String feess = request.getParameter("fees");
 			float fees = Float.parseFloat(feess);
